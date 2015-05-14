@@ -1,0 +1,44 @@
+
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-scaffold/core-scaffold.html">
+<link rel="import" href="../components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../components/core-item/core-item.html">
+<link rel="import" href="../components/core-icons/social-icons.html">
+<link rel="import" href="../components/core-icons/hardware-icons.html">
+<link rel="import" href="../components/core-menu/core-menu.html">
+<link rel="import" href="../components/pushstate-anchor/pushstate-anchor.html">
+<link rel="import" href="../components/core-icons/communication-icons.html">
+
+<polymer-element name="scaffold-layout" attributes="selected color" noscript>
+    
+  <template>   
+<link rel="stylesheet" type="text/css" href="../css/theme.css" media="all, print" shim-shadowdom>  
+      
+    <core-scaffold>
+        
+      <core-header-panel class="menu-tower" navigation flex mode="seamed">
+        <core-toolbar class="nav-box">
+            <core-item id="user-account" icon="account-circle" label="Username"></core-item>          
+          </core-toolbar>
+        <core-menu class="tower">
+          <core-item id="yami" icon="dashboard" label="Yami" class="nav-item" active?="{{selected == 'Yami'}}"><a is="pushstate-anchor" href="#/"></a></core-item>
+          <core-item id="contacts" icon="communication:contacts" label="Contacts" class="nav-item" active?="{{selected == 'Contacts'}}"><a is="pushstate-anchor" href="#/contacts"></a></core-item>
+          <core-item id="assets" icon="account-balance" label="Own & Owe" class="nav-item" active?="{{selected == 'Own & Owe'}}"><a is="pushstate-anchor" href="#/assets"></a></core-item>
+          <core-item id="income" icon="account-balance-wallet" label="Income &amp; Expenses" class="nav-item" active?="{{selected == 'Income &amp; Expenses'}}"><a is="pushstate-anchor" href="#/income"></a></core-item>
+          <core-item id="account" icon="settings" label="Account" class="nav-item" active?="{{selected == 'Account'}}"><a is="pushstate-anchor" href="#/account"></a></core-item>
+          <core-item id="subscription" icon="credit-card" label="My Subscription" class="nav-item" active?="{{selected == 'My Subscription'}}"><a is="pushstate-anchor" href="#/subscription"></a></core-item>
+         </core-menu>  
+      </core-header-panel>
+        
+      <div tool>
+        <content select=".title"></content>
+      </div>
+        
+      <div class="content">
+        <content></content>
+      </div>
+        
+    </core-scaffold>
+  </template>
+</polymer-element>
